@@ -235,8 +235,10 @@ public class CodeScanBuilder extends Builder implements SimpleBuildStep {
 
 			if (StringUtils.equals(outputStatus, "failed") ){
 				listener.fatalError("Build failed");
+				throw new CodeScanException("Build failed");
 			}else if (StringUtils.equals(outputStatusAlert, "ERROR") ){
 				listener.fatalError("Build Condition Failed: " + outputStatusAlertDescription);
+				throw new CodeScanException("Build Condition Failed: " + outputStatusAlertDescription);
 			}
 		}
     }
