@@ -1,0 +1,36 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <!--
+    This jelly script is used for per-project configuration.
+
+    See global.jelly for a general discussion about jelly script.
+  -->
+
+  <f:entry title="Project Key" field="projectKey" description="The Project Key to build">
+    <f:textbox />
+  </f:entry>
+
+  <f:entry title="Wait for Result" field="blocking" description="Whether to wait until build is complete. The build will fail if an error occurs or a Quality Gate fails">
+    <f:checkbox />
+  </f:entry>
+  
+  <f:entry title="Version" field="version" description="Override the build version. This helps to identify 'new' issues">
+    <f:textbox />
+  </f:entry>
+
+  <f:entry title="Commit Override" field="commitOverride" description="Use a specific branch/commit when using Git as the source">
+    <f:textbox />
+  </f:entry>
+
+  <f:entry title="Email Report To" field="emailReportTo" description="Comma seperated list of users to email the build report to">
+    <f:textbox />
+  </f:entry>
+
+  <f:entry title="Analysis Mode" field="analysisMode" description="">
+    <f:select/>
+  </f:entry>
+
+  <f:entry title="Project Branch" field="projectBranch" description="Create a seperate project report based on the same project input">
+    <f:textbox />
+  </f:entry>
+</j:jelly>
